@@ -310,7 +310,7 @@ endif (MATLAB)
 # If we are building Python/Matlab/R interface:
 #   - do not build shared library
 #   - do not build demo
-if (NOT PYTHON AND NOT MATLAB AND NOT R_LANG AND NOT EMBEDDED)
+if (NOT GAUSS AND NOT PYTHON AND NOT MATLAB AND NOT R_LANG AND NOT EMBEDDED)
     # Create osqp shared library
     # NB: Add all the linear system solvers here
     add_library (osqp SHARED ${osqp_src} ${osqp_headers} ${linsys_solvers})
@@ -334,7 +334,7 @@ if (NOT PYTHON AND NOT MATLAB AND NOT R_LANG AND NOT EMBEDDED)
     add_executable (osqp_demo ${PROJECT_SOURCE_DIR}/examples/osqp_demo.c)
     target_link_libraries (osqp_demo osqpstatic)
 
-endif (NOT PYTHON AND NOT MATLAB AND NOT R_LANG AND NOT EMBEDDED)
+endif (NOT GAUSS AND NOT PYTHON AND NOT MATLAB AND NOT R_LANG AND NOT EMBEDDED)
 
 # Create CMake packages for the build directory
 # ----------------------------------------------

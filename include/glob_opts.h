@@ -143,6 +143,8 @@ typedef float c_float;  /* for numerical values  */
 #  elif defined R_LANG
 #   include <R_ext/Print.h>
 #   define c_print Rprintf
+#  elif defined GAUSS
+   extern int c_print(const char *format, ...);
 #  else  /* ifdef MATLAB */
 #   define c_print printf
 #  endif /* c_print configuration */
